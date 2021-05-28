@@ -27,10 +27,8 @@ const resultGame = (result, name, answerToQuestion, Answer) => {
   }
 };
 
-
 export const getTest = (name) => { // тестирование игрока
   let good = true;
-  const answerWord = ['yes', 'no'];
   let answerToQuestion = '';
   let Answer = '';
 
@@ -40,7 +38,7 @@ export const getTest = (name) => { // тестирование игрока
     answerToQuestion = getAnswer('Your answer: '); // ответ игрока
     Answer = isEven(num) ? 'yes' : 'no'; // правильный ответ в игре
 
-    if (answerWord.includes(answerToQuestion)) { // проверяем ответ игрока на 'yes' 'no'
+    if (answerToQuestion === 'yes' || answerToQuestion === 'no') { // проверяем ответ игрока на 'yes' 'no'
       if (Answer === answerToQuestion) { // правильный ответ в игре = ответу игрока
         console.log('Correct!');
       } else {
@@ -52,14 +50,5 @@ export const getTest = (name) => { // тестирование игрока
       break;
     }
   }
-
-/*  
-  if (good) {
-    console.log(`Congratulations, ${name}!`); // игрок ответил правильно на три вопроса
-  } else { // игрок лажанул ;-)
-    console.log(`'${answerToQuestion}' is wrong answer ;(. Correct answer was '${Answer}'.`);
-    console.log(`Let's try again, ${name}!`);
-  }
-  */
   resultGame(good, name, answerToQuestion, Answer);
 };
