@@ -19,6 +19,14 @@ export const isEven = (num) => { // определение четности чи
   return false;
 };
 
+export const gcd = (a, b) => { // наибольший общий делитель
+  if (b === 0) {
+    return a;
+  }
+
+  return gcd(b, a % b);
+};
+
 export const runGame = (nameQuestion, questions, answers) => {
   const name = getName();
   setQuestion(nameQuestion);
