@@ -1,7 +1,3 @@
-// import {
-//  cons, car, cdr, toString, isPair,
-// } from '@hexlet/pairs';
-
 import {
   getName, setQuestion, getAnswerToQuestion, correctAnswer, incorrectAnswer,
 } from './cli.js';
