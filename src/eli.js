@@ -18,6 +18,14 @@ const isEven = (num) => { // определение четности числа,
   return false;
 };
 
+const resultGame = (good, name, answerToQuestion, Answer) => {
+  if (good) { // игрок ответил правильно на три вопроса
+    console.log(`Congratulations, ${name}!`);
+  } else { // игрок лажанул ;-)
+    console.log(`'${answerToQuestion}' is wrong answer ;(. Correct answer was '${Answer}'.`);
+    console.log(`Let's try again, ${name}!`);
+  }
+};
 
 export const getTest = (name) => { // тестирование игрока
   let good = true;
@@ -37,14 +45,5 @@ export const getTest = (name) => { // тестирование игрока
       break;
     }
   }
-
-  const resultGame = () => {
-    if (good) { // игрок ответил правильно на три вопроса
-      console.log(`Congratulations, ${name}!`);
-    } else { // игрок лажанул ;-)
-      console.log(`'${answerToQuestion}' is wrong answer ;(. Correct answer was '${Answer}'.`);
-      console.log(`Let's try again, ${name}!`);
-    }
-  };
-  resultGame();
+  resultGame(good, name, answerToQuestion, Answer);
 };
