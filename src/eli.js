@@ -38,15 +38,10 @@ export const getTest = (name) => { // тестирование игрока
     answerToQuestion = getAnswer('Your answer: '); // ответ игрока
     Answer = isEven(num) ? 'yes' : 'no'; // правильный ответ в игре
 
-    if (answerToQuestion === 'yes' || answerToQuestion === 'no') { // проверяем ответ игрока на 'yes' 'no'
-      if (Answer === answerToQuestion) { // правильный ответ в игре = ответу игрока
-        console.log('Correct!');
-      } else {
-        good = false; // игрок ответил не верно (yes/no)
-        break;
-      }
+    if ((answerToQuestion === 'yes' || answerToQuestion === 'no') && Answer === answerToQuestion) { // проверяем ответ игрока
+      console.log('Correct!');
     } else {
-      good = false; // игрок ввел не верно ответ (y/n || gf)
+      good = false; // игрок ответил не верно (yes/no)
       break;
     }
   }
