@@ -4,8 +4,10 @@
 [![brain-games](https://github.com/PVArech/backend-project-lvl1/actions/workflows/main.yml/badge.svg)](https://github.com/PVArech/backend-project-lvl1/actions/workflows/main.yml)
 
 
-## asciinema
+## asciinema brain-even
 [![asciicast](https://asciinema.org/a/WhCVZ1uiDJh3UpTWUMHusraXM.svg)](https://asciinema.org/a/WhCVZ1uiDJh3UpTWUMHusraXM)
+
+## asciinema brain-calc
 
 
 ## Setup

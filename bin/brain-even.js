@@ -1,9 +1,14 @@
 #!/usr/bin/env node
 
-import { getAnswer, getTest } from '../src/eli.js';
+import { runGame, getRandomInt, isEven } from '../src/index.js';
 
-console.log('Welcome to the Brain Games! ');
-const name = getAnswer('May I have your name? ');
-console.log(`Hello, ${name}!`);
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-getTest(name);
+const nameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
+const questions = [];
+const answers = [];
+for (let i = 0; i < 3; i += 1) {
+  const num = getRandomInt(1, 30);
+  questions.push(num);
+  answers.push(isEven(num) ? 'yes' : 'no');
+}
+
+runGame(nameQuestion, questions, answers);
