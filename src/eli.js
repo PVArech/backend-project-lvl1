@@ -18,32 +18,35 @@ const isEven = (num) => { // определение четности числа,
   return false;
 };
 
-const resultGame = (good, name, answerToQuestion, Answer) => {
+/* const resultGame = (good, name, answerToQuestion, Answer) => {
   if (good) { // игрок ответил правильно на три вопроса
     console.log(`Congratulations, ${name}!`);
   } else { // игрок лажанул ;-)
     console.log(`'${answerToQuestion}' is wrong answer ;(. Correct answer was '${Answer}'.`);
     console.log(`Let's try again, ${name}!`);
   }
-};
+}; */
 
 export const getTest = (name) => { // тестирование игрока
-  let good = true;
-  let answerToQuestion = '';
-  let Answer = '';
+  // let good = true;
+  // let answerToQuestion = '';
+  // let Answer = '';
 
   for (let i = 0; i < 3; i += 1) {
     const num = getRandomInt(1, 30);
     console.log(`Question: ${num}`); // число для ответа игроку
-    answerToQuestion = getAnswer('Your answer: '); // ответ игрока
-    Answer = isEven(num) ? 'yes' : 'no'; // правильный ответ в игре
+    const answerToQuestion = getAnswer('Your answer: '); // ответ игрока
+    const Answer = isEven(num) ? 'yes' : 'no'; // правильный ответ в игре
 
     if ((answerToQuestion === 'yes' || answerToQuestion === 'no') && Answer === answerToQuestion) { // проверяем ответ игрока
       console.log('Correct!');
     } else {
-      good = false; // игрок ответил не верно (yes/no)
-      break;
+      return console.log(`'${answerToQuestion}' is wrong answer ;(. Correct answer was '${Answer}'.
+Let's try again, ${name}!`);
+      // good = false; // игрок ответил не верно (yes/no)
+      // break;
     }
   }
-  resultGame(good, name, answerToQuestion, Answer);
+  return console.log(`Congratulations, ${name}!`);
+  // resultGame(good, name, answerToQuestion, Answer);
 };
