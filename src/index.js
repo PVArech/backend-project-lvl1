@@ -23,6 +23,18 @@ export const gcd = (a, b) => { // наибольший общий делител
   return gcd(b, a % b);
 };
 
+export const isPrime = (num) => { // простое число?
+  if (num <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= num / 2; i += 1) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
 export const runGame = (nameQuestion, questions, answers) => {
   const name = getName();
   setQuestion(nameQuestion);

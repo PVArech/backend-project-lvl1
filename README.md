@@ -16,6 +16,9 @@
 ## asciinema brain-progression
 [![asciicast](https://asciinema.org/a/417162.svg)](https://asciinema.org/a/417162)
 
+## asciinema brain-prime
+[![asciicast](https://asciinema.org/a/417164.svg)](https://asciinema.org/a/417164)
+
 ## Setup
 
 ```sh
