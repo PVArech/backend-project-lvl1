@@ -14,8 +14,8 @@ export const getName = () => { // знакомство с игроком
 
 export const setQuestion = (nameQuestion) => console.log(`${nameQuestion}`);
 
-export const getAnswerToQuestion = (Question) => {
-  console.log(`Question: ${Question}`); // вопрос игроку
+export const getAnswerToQuestion = (question) => {
+  console.log(`Question: ${question}`); // вопрос игроку
   const answerToQuestion = readlineSync.question('Your answer: '); // ответ игрока
   return answerToQuestion;
 };
