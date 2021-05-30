@@ -39,7 +39,13 @@ export const runGame = (nameQuestion, questions, answers) => {
   const name = getName();
   setQuestion(nameQuestion);
   for (let i = 0; i < 3; i += 1) {
-    const answerToQuestion = getAnswerToQuestion(`${Array.isArray(questions[i]) ? questions[i].join(' ') : questions[i]}`);
+    let answerToQuestion = '';
+    if (Array.isArray(questions[i])) {
+      answerToQuestion = getAnswerToQuestion(questions[i].join(' '));
+    } else {
+      answerToQuestion = getAnswerToQuestion(questions[i]);
+    }
+
     if (answerToQuestion === answers[i]) {
       console.log('Correct!');
     } else {
