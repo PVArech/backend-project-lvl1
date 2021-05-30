@@ -34,13 +34,13 @@ export const isPrime = (num) => { // простое число?
   return true;
 };
 
-export const getQuestionsAnswers = (begin, end, evenPrime) => {
+export const getQuestionsAnswers = (startValue, endValue, evenPrime) => {
   // evenPrime true - isEven, false - isPrime
   const questions = [];
   const answers = [];
 
   for (let i = 0; i < 3; i += 1) {
-    const number = getRandomInt(begin, end);
+    const number = getRandomInt(startValue, endValue);
     questions.push(number);
     if (evenPrime) {
       answers.push(isEven(number) ? 'yes' : 'no');
