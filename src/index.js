@@ -19,7 +19,6 @@ export const gcd = (a, b) => { // наибольший общий делител
   if (b === 0) {
     return a;
   }
-
   return gcd(b, a % b);
 };
 
@@ -33,6 +32,23 @@ export const isPrime = (num) => { // простое число?
     }
   }
   return true;
+};
+
+export const getQuestionsAnswers = (begin, end, evenPrime) => {
+  // evenPrime true - isEven, false - isPrime
+  const questions = [];
+  const answers = [];
+
+  for (let i = 0; i < 3; i += 1) {
+    const number = getRandomInt(begin, end);
+    questions.push(number);
+    if (evenPrime) {
+      answers.push(isEven(number) ? 'yes' : 'no');
+    } else {
+      answers.push(isPrime(number) ? 'yes' : 'no');
+    }
+  }
+  return [questions, answers];
 };
 
 const getQuestion = (array) => {
