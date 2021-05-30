@@ -42,11 +42,7 @@ export const getQuestionsAnswers = (startValue, endValue, evenPrime) => {
   for (let i = 0; i < 3; i += 1) {
     const number = getRandomInt(startValue, endValue);
     questions.push(number);
-    if (evenPrime) {
-      answers.push(isEven(number) ? 'yes' : 'no');
-    } else {
-      answers.push(isPrime(number) ? 'yes' : 'no');
-    }
+    answers.push(evenPrime(number) ? 'yes' : 'no');
   }
   return [questions, answers];
 };
