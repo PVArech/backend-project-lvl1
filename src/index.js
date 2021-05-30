@@ -35,17 +35,21 @@ export const isPrime = (num) => { // простое число?
   return true;
 };
 
+const getQuestion = (array) => {
+  let answerToQuestion = '';
+  if (Array.isArray(array)) {
+    answerToQuestion = getAnswerToQuestion(array.join(' '));
+  } else {
+    answerToQuestion = getAnswerToQuestion(array);
+  }
+  return answerToQuestion;
+};
+
 export const runGame = (nameQuestion, questions, answers) => {
   const name = getName();
   setQuestion(nameQuestion);
   for (let i = 0; i < 3; i += 1) {
-    let answerToQuestion = '';
-    if (Array.isArray(questions[i])) {
-      answerToQuestion = getAnswerToQuestion(questions[i].join(' '));
-    } else {
-      answerToQuestion = getAnswerToQuestion(questions[i]);
-    }
-
+    const answerToQuestion = getQuestion(questions[i]);
     if (answerToQuestion === answers[i]) {
       console.log('Correct!');
     } else {
